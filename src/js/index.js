@@ -38,11 +38,7 @@ const SyncStorageSet = (name, value) => {
     if (typeof chrome !== undefined) {
         let item = {};
         item[name] = value;
-        chrome.storage.sync.set(item, () => {
-            if (chrome.runtime.error) {
-                console.error('Runtime Error.');
-            }
-        });
+        chrome.storage.sync.set(item);
     }
 };
 
